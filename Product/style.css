@@ -441,3 +441,64 @@ a:hover {
     color: #999;
     background-color: #f7f7f7;
 }
+
+/* --- 共用 Navbar & Footer 手機版設定 --- */
+@media (max-width: 768px) {
+    /* 隱藏電腦版專用圖示 */
+    .desktop-only {
+        display: none;
+    }
+
+    /* 側邊選單：右對齊排版 (維持你之前的精品感) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-end; /* 文字靠右 */
+        padding: 100px 30px;
+        transition: transform 0.4s ease;
+        z-index: 1000;
+        display: flex;
+    }
+
+    .nav-menu.active {
+        transform: translateX(100%);
+    }
+
+    .menu-links a {
+        font-size: 20px;
+        padding: 15px 0;
+        border-bottom: 1px solid #f5f5f5;
+        width: 100%;
+        text-align: right;
+    }
+
+    /* --- Product 頁面專屬修正：讓商品圖跟文字上下堆疊 --- */
+    .product-wrapper {
+        flex-direction: column; /* 核心修正：從左右並排改為上下堆疊 */
+        padding: 20px 15px;
+    }
+
+    .product-gallery, .product-info-details {
+        width: 100%; /* 寬度佔滿 */
+    }
+
+    .main-image img {
+        height: auto;
+        max-height: 400px; /* 限制高度，避免滑不完 */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* --- Footer 修正：Logo 置中 --- */
+    .footer-top-container, .footer-info-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
