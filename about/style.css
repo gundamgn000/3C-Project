@@ -296,3 +296,384 @@
     font-size: 12px;
     color: #999;
 }
+
+/* =========================
+   About 頁 手機板專用
+   不動桌機版，只覆蓋 768px 以下
+========================= */
+@media (max-width: 768px) {
+    /* --- Navbar --- */
+    .header {
+        padding: 12px 0;
+    }
+
+    .header-container {
+        padding: 0 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .logo {
+        flex: 0 0 auto;
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .nav-menu {
+        flex: 0 0 100%;
+        order: 2;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: nowrap;
+    }
+
+    .nav-icons {
+        flex: 0 0 100%;
+        order: 3;
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        font-size: 13px;
+    }
+
+    .icon-item {
+        white-space: nowrap;
+    }
+
+    /* --- About 頁整體 --- */
+    .about-page {
+        padding-bottom: 56px;
+    }
+
+    /* --- Hero --- */
+    .about-hero {
+        margin: 16px 12px 0;
+        border-radius: 18px;
+        padding: 0 0 20px;
+    }
+
+    .about-hero-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .about-hero-image {
+        flex: none;
+        width: 100%;
+        height: 280px;
+    }
+
+    .about-hero-text {
+        flex: none;
+        width: 100%;
+        padding: 28px 20px 10px;
+        text-align: center;
+    }
+
+    .about-subtitle {
+        font-size: 12px;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+    }
+
+    .about-hero-text h1 {
+        font-size: 28px;
+        line-height: 1.45;
+        margin-bottom: 18px;
+    }
+
+    .about-hero-text p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* --- Hero 下方三圖 --- */
+    .about-story-gallery {
+        padding: 8px 20px 0;
+    }
+
+    .about-story-gallery-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .story-gallery-item.large {
+        min-height: 0;
+    }
+
+    .story-gallery-item,
+    .story-gallery-item.large {
+        border-radius: 14px;
+    }
+
+    .story-gallery-item img {
+        height: 180px;
+    }
+
+    /* --- 區塊標題 --- */
+    .section-title {
+        margin-bottom: 28px;
+        padding: 0 16px;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+    }
+
+    .section-title p {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    /* --- 核心價值 --- */
+    .brand-values {
+        margin-top: 44px;
+    }
+
+    .values-grid {
+        flex-direction: column;
+        gap: 16px;
+        margin: 0 auto 64px;
+        padding: 0 16px;
+    }
+
+    .value-item {
+        padding: 28px 18px;
+        border-radius: 16px;
+    }
+
+    .value-num {
+        font-size: 38px;
+        margin-bottom: 8px;
+    }
+
+    .value-item h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .value-item p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    /* --- Detail 區 --- */
+    .about-detail {
+        padding: 0 16px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        border-radius: 18px;
+    }
+
+    .detail-img {
+        flex: none;
+        width: 100%;
+        height: 240px;
+    }
+
+    .detail-content {
+        flex: none;
+        width: 100%;
+        padding: 24px 20px 28px;
+        text-align: center;
+    }
+
+    .detail-content h2 {
+        font-size: 24px;
+        line-height: 1.45;
+        margin-bottom: 14px;
+    }
+
+    .detail-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* --- Footer --- */
+    .footer-main {
+        margin-top: 72px;
+        padding: 56px 0 24px;
+    }
+
+    .footer-top-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 28px;
+        padding: 0 20px;
+    }
+
+    .footer-logo-square {
+        width: 84px;
+        height: 84px;
+        font-size: 20px;
+    }
+
+    .footer-links-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer-column h4 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .footer-column p,
+    .footer-column ul li {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .footer-bottom {
+        margin: 36px 16px 0;
+        padding-top: 20px;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
+
+/* =========================
+   更小手機
+========================= */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .nav-icons {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .about-hero {
+        margin: 14px 10px 0;
+        border-radius: 16px;
+    }
+
+    .about-hero-image {
+        height: 240px;
+    }
+
+    .about-hero-text {
+        padding: 24px 16px 8px;
+    }
+
+    .about-hero-text h1 {
+        font-size: 24px;
+    }
+
+    .about-hero-text p {
+        font-size: 13px;
+    }
+
+    .about-story-gallery {
+        padding: 8px 16px 0;
+    }
+
+    .story-gallery-item img {
+        height: 160px;
+    }
+
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+    .section-title p {
+        font-size: 11px;
+    }
+
+    .values-grid {
+        padding: 0 12px;
+        gap: 14px;
+        margin-bottom: 56px;
+    }
+
+    .value-item {
+        padding: 24px 16px;
+    }
+
+    .value-num {
+        font-size: 34px;
+    }
+
+    .value-item h3 {
+        font-size: 17px;
+    }
+
+    .value-item p {
+        font-size: 12px;
+    }
+
+    .about-detail {
+        padding: 0 12px;
+    }
+
+    .detail-img {
+        height: 210px;
+    }
+
+    .detail-content {
+        padding: 22px 16px 24px;
+    }
+
+    .detail-content h2 {
+        font-size: 21px;
+    }
+
+    .detail-content p {
+        font-size: 13px;
+    }
+
+    .footer-main {
+        margin-top: 64px;
+        padding: 48px 0 22px;
+    }
+
+    .footer-top-container {
+        padding: 0 16px;
+        gap: 24px;
+    }
+
+    .footer-links-grid {
+        gap: 20px;
+    }
+
+    .footer-column h4 {
+        font-size: 14px;
+    }
+
+    .footer-column p,
+    .footer-column ul li {
+        font-size: 12px;
+    }
+}
