@@ -343,7 +343,7 @@ img {
 }
 
 /* ==========================================================================
-   Footer（對齊 About 風格）
+   Footer
    ========================================================================== */
 .footer-info-section {
     background-color: #f1ede8;
@@ -504,7 +504,7 @@ img {
         padding: 11px 0;
     }
 
-    /* 推薦商品：平板改成完整三欄，不露半張 */
+    
     /* 推薦商品：平板改成可手滑橫向瀏覽 */
     .recommend-section {
         max-width: 100%;
@@ -645,7 +645,6 @@ img {
    手機版 <= 768px
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Navbar：對齊 About 手機風格 */
     .header {
         padding: 12px 0;
     }
@@ -864,7 +863,7 @@ img {
         white-space: nowrap;
     }
 
-    /* Footer：對齊 About 手機風格 */
+    /* Footer */
     .footer-info-section {
         margin-top: 0;
         padding: 56px 0 24px;
@@ -1045,10 +1044,10 @@ img {
 
 /* 標題 */
 .product-title {
-    font-size: 26px;          /* 比現在大一點點 */
+    font-size: 26px;          
     font-weight: 500;
-    line-height: 1.5;         /* 關鍵：拉開呼吸感 */
-    letter-spacing: 0.5px;    /* 微精品感 */
+    line-height: 1.5;         
+    letter-spacing: 0.5px;    
     margin-bottom: 14px;
 }
 
@@ -1062,7 +1061,7 @@ img {
 /* 描述 */
 .product-description {
     font-size: 14px;
-    line-height: 1.9;         /* 關鍵：讓閱讀更舒服 */
+    line-height: 1.9;         
     color: #777;
     margin-bottom: 22px;
 }
