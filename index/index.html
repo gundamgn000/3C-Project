@@ -27,11 +27,11 @@
                 <div class="nav-dropdown">
                     <a href="../Product/product.html" class="nav-dropdown-trigger">商品</a>
                     <div class="nav-dropdown-menu">
-                        <a href="../Product/product.html">所有商品</a>
-                        <a href="../Product/product.html">香氛</a>
-                        <a href="../Product/product.html">精油</a>
-                        <a href="../Product/product.html">乳霜</a>
-                        <a href="../Product/product.html">擴香</a>
+                         <a href="../Product/product.html" class="drawer-sublink">所有商品</a>
+                        <a href="../Product/product.html?category=fragrance" class="drawer-sublink">香氛</a>
+                        <a href="../Product/product.html?category=essential-oil" class="drawer-sublink">精油</a>
+                        <a href="../Product/product.html?category=cream" class="drawer-sublink">乳霜</a>
+                        <a href="../Product/product.html?category=diffuser" class="drawer-sublink">擴香</a>
                     </div>
                 </div>
 
@@ -56,12 +56,12 @@
                         <span class="drawer-arrow">⌄</span>
                     </button>
 
-                    <div class="drawer-submenu" id="drawerSubmenu">
+                    <div class="drawer-submenu active" id="drawerSubmenu">
                         <a href="../Product/product.html" class="drawer-sublink">所有商品</a>
-                        <a href="../Product/product.html" class="drawer-sublink">香氛</a>
-                        <a href="../Product/product.html" class="drawer-sublink">精油</a>
-                        <a href="../Product/product.html" class="drawer-sublink">乳霜</a>
-                        <a href="../Product/product.html" class="drawer-sublink">擴香</a>
+                        <a href="../Product/product.html?category=fragrance" class="drawer-sublink">香氛</a>
+                        <a href="../Product/product.html?category=essential-oil" class="drawer-sublink">精油</a>
+                        <a href="../Product/product.html?category=cream" class="drawer-sublink">乳霜</a>
+                        <a href="../Product/product.html?category=diffuser" class="drawer-sublink">擴香</a>
                     </div>
                 </div>
 
@@ -175,19 +175,19 @@
             <p>快速找到你需要的商品</p>
         </div>
         <div class="category-grid">
-            <div class="category-item">
+            <a href="../Product/product.html?category=fragrance" class="category-item">
                 <img src="images/cat1.jpg" alt="香氛">
                 <span class="category-label">香氛</span>
-            </div>
-            <div class="category-item">
+            </a>
+            <a href="../Product/product.html?category=essential-oil" class="category-item">
                 <img src="images/cat2.jpg" alt="精油">
                 <span class="category-label">精油</span>
-            </div>
-            <div class="category-item">
+            </a>
+            <a href="../Product/product.html?category=cream" class="category-item">
                 <img src="images/cat3.jpg" alt="乳霜">
                 <span class="category-label">乳霜</span>
-            </div>
-            <div class="category-item">
+            </a>
+            <a href="../Product/product.html?category=diffuser" class="category-item">
                 <img src="images/cat4.jpg" alt="擴香">
                 <span class="category-label">擴香</span>
             </div>
@@ -266,6 +266,56 @@
             drawerDropdownToggle.classList.toggle('active');
             drawerSubmenu.classList.toggle('active');
         });
+    </script>
+
+    <script>
+        const categoryButtons = document.querySelectorAll('.category-chip');
+        const productCards = document.querySelectorAll('.list-product-card');
+        const productCount = document.querySelector('.product-list-meta span');
+
+        function normalizeCategory(category) {
+            return category && category.trim() ? category : 'all';
+        }
+
+        function filterProducts(category, updateUrl = true) {
+            const currentCategory = normalizeCategory(category);
+            let visibleCount = 0;
+
+            productCards.forEach(card => {
+                const cardCategory = card.dataset.category;
+
+                if (currentCategory === 'all' || cardCategory === currentCategory) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (productCount) {
+                productCount.textContent = `共 ${visibleCount} 項商品`;
+            }
+
+            categoryButtons.forEach(button => {
+                button.classList.toggle('active', button.dataset.category === currentCategory);
+            });
+
+            if (updateUrl) {
+                const url = new URL(window.location.href);
+                url.searchParams.set('category', currentCategory);
+                window.history.replaceState({}, '', url);
+            }
+        }
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterProducts(button.dataset.category);
+            });
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        const initialCategory = params.get('category') || 'all';
+        filterProducts(initialCategory, false);
     </script>
 
 </body>
