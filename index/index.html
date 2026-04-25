@@ -44,18 +44,32 @@
             </div>
         </div>
 
-        <div class="mobile-drawer" id="mobileDrawer">
+                <div class="mobile-drawer" id="mobileDrawer">
             <div class="mobile-drawer-inner">
-                <a href="index.html" class="drawer-link active">首頁</a>
-                <a href="#" class="drawer-link">品牌故事</a>
+                <a href="../index/index.html" class="drawer-link">首頁</a>
+                <a href="../about/about.html" class="drawer-link">品牌故事</a>
+
                 <div class="drawer-dropdown">
-                    <button class="drawer-dropdown-toggle" id="drawerDropdownToggle">商品分類 <span class="drawer-arrow">⌄</span></button>
-                    <div class="drawer-submenu" id="drawerSubmenu">
-                        <a href="#" class="drawer-sublink">所有商品</a>
-                        <a href="#" class="drawer-sublink">熱門推薦</a>
+                    <button class="drawer-dropdown-toggle active" id="drawerDropdownToggle" type="button">
+                        商品分類
+                        <span class="drawer-arrow">⌄</span>
+                    </button>
+
+                    <div class="drawer-submenu active" id="drawerSubmenu">
+                        <a href="../product/product.html?category=all" class="drawer-sublink">所有商品</a>
+                        <a href="../product/product.html?category=3c" class="drawer-sublink">3C 科技</a>
+                        <a href="../product/product.html?category=smart-home" class="drawer-sublink">智慧家電</a>
+                        <a href="../product/product.html?category=lifestyle" class="drawer-sublink">生活周邊</a>
                     </div>
                 </div>
+
                 <a href="#footer" class="drawer-link">聯絡我們</a>
+
+                <div class="mobile-drawer-icons">
+                    <a href="#">🔍 搜尋商品</a>
+                    <a href="#">會員</a>
+                    <a href="#">🛒購物車 (2)</a>
+                </div>
             </div>
         </div>
     </header>
