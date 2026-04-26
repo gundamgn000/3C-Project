@@ -828,3 +828,43 @@ body {
         box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
     }
 }
+
+/* ==========================================================================
+   Desktop Sidebar Scroll Fix
+   修正桌機放大比例時，左側 Navbar 無法捲動問題
+   ========================================================================== */
+
+@media (min-width: 1025px) {
+    .header {
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+    }
+
+    .header-container {
+        min-height: 100%;
+        height: auto;
+    }
+
+    .nav-icons {
+        margin-top: 32px;
+        padding-bottom: 20px;
+    }
+
+    .header::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .header::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .header::-webkit-scrollbar-thumb {
+        background: rgba(0, 180, 255, 0.22);
+        border-radius: 999px;
+    }
+
+    .header::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 180, 255, 0.38);
+    }
+}
